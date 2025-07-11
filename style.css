@@ -180,3 +180,44 @@ body {
   margin-right: 0.5rem;
   color: #00f5d4;
 }
+.join-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.join-card {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  width: 300px;
+  text-align: center;
+  border-top: 5px solid #00f5d4;
+}
+
+.join-card h2 {
+  color: #00f5d4;
+  margin-bottom: 1rem;
+}
+
+.join-card p {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.join-card .btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #00f5d4;
+  color: #000;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.join-card .btn:hover {
+  background-color: #00c3a5;
+}
