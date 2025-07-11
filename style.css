@@ -257,3 +257,24 @@ body {
     height: 200px;
   }
         }
+.artist-banner {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00f5d4;
+  box-shadow: 0 0 20px rgba(0, 245, 212, 0.5);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.artist-banner:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .artist-banner {
+    width: 140px;
+    height: 140px;
+  }
+}
