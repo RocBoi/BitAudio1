@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mint NFT | RocBoi Quez</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script defer src="mint.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">BitAudioX</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="artists.html">Artist</a></li>
+        <li><a href="mint.html" class="active">Mint NFT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="mint-hero">
+    <h1>🎧 Mint NFT: “Summer of The Real”</h1>
+    <p>Limited edition music NFT by RocBoi Quez — Own the track, support directly.</p>
+  </section>
+
+  <section class="mint-card">
+    <img src="BitAudio1/summer-cover.jpg" alt="Summer of The Real Cover" class="mint-cover" />
+    <p><strong>Price:</strong> 0.01 ETH</p>
+    <button id="connectWallet">🔗 Connect Wallet</button>
+    <button id="mintNFT" disabled>🎵 Mint NFT</button>
+    <p id="statusMsg"></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 BitAudioX. Own the sound. On-chain.</p>
+  </footer>
+</body>
+</html>
