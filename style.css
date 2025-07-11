@@ -267,7 +267,18 @@ body {
   margin-bottom: 1.5rem;
   transition: transform 0.3s ease;
 }
-
+.eth-support {
+  text-align: center;
+  margin-top: 3rem;
+  color: #00f5d4;
+}
+.eth-address {
+  background: #111;
+  padding: 0.5rem 1rem;
+  font-family: monospace;
+  border-radius: 6px;
+  display: inline-block;
+}
 .artist-banner:hover {
   transform: scale(1.05);
 }
