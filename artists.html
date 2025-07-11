@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 </head>
 <body>
   <header class="header">
@@ -22,18 +23,30 @@
     </nav>
   </header>
 
-  <!-- Hero section with RocBoi Quez's image -->
+  <!-- Hero section -->
   <section class="hero neon artist-hero">
     <img src="IMG_20250624_210514_787.webp" alt="RocBoi Quez" class="artist-banner" />
     <h1>RocBoi Quez</h1>
     <p>First Official BitAudioX Hip-Hop Artist | Crypto-Driven. Culture-Focused.</p>
   </section>
-<section class="eth-support">
-  <h3>🎧 Tip RocBoi Quez with Ethereum</h3>
-  <p>Send ETH to:</p>
-  <code class="eth-address">0x05e07bca157986544e5c41e90a34910d5d5e423b</code>
-  <p>Connected via MetaMask | EVM-Compatible</p>
-</section> <button id="connectWallet">🔗 Connect Wallet</button>
+
+  <!-- Ethereum support / tipping section -->
+  <section class="eth-support">
+    <h3>🎧 Tip RocBoi Quez with Ethereum</h3>
+    <p>Send ETH to:</p>
+    <code class="eth-address">0x05e07bca157986544e5c41e90a34910d5d5e423b</code>
+    <p>Connected via MetaMask | EVM-Compatible</p>
+    <button id="connectWallet">🔗 Connect Wallet</button>
+  </section>
+
+  <!-- NFT purchase section -->
+  <section class="nft-purchase">
+    <h2>🎵 Exclusive NFT Drop: Unreleased Track</h2>
+    <p>Own “Get Out Your Feelings (Chopped & Screwed)” by RocBoi Quez — limited Web3 release.</p>
+    <button id="buyNFT">🛒 Purchase with Ethereum (0.05 ETH)</button>
+    <p id="nft-status"></p>
+  </section>
+
   <!-- Artist bio section -->
   <section class="artist-glass-card">
     <div class="bio">
@@ -56,5 +69,47 @@
   <footer class="footer">
     <p>&copy; 2025 BitAudioX. Built for the Blockchain Slattland Records Inc</p>
   </footer>
+
+  <!-- Web3 NFT Script -->
+  <script>
+    const CONTRACT_ADDRESS = "YOUR_CONTRACT_ADDRESS";
+    const CONTRACT_ABI = [YOUR_ABI_JSON_HERE];
+
+    document.getElementById("connectWallet").onclick = async () => {
+      if (window.ethereum) {
+        try {
+          await ethereum.request({ method: "eth_requestAccounts" });
+          alert("Wallet connected!");
+        } catch (err) {
+          console.error(err);
+        }
+      } else {
+        alert("Please install MetaMask to use this feature.");
+      }
+    };
+
+    document.getElementById("buyNFT").onclick = async () => {
+      if (!window.ethereum) {
+        alert("Please install MetaMask to proceed.");
+        return;
+      }
+
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+
+      try {
+        const tx = await contract.purchaseNFT({
+          value: ethers.utils.parseEther("0.05")
+        });
+        document.getElementById("nft-status").textContent = "⏳ Processing...";
+        await tx.wait();
+        document.getElementById("nft-status").textContent = "✅ NFT Purchased Successfully!";
+      } catch (error) {
+        console.error(error);
+        document.getElementById("nft-status").textContent = "❌ Transaction Failed.";
+      }
+    };
+  </script>
 </body>
 </html>
