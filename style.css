@@ -235,3 +235,25 @@ body {
 .artist-photo:hover {
   transform: scale(1.05);
 }
+.artist-hero {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.artist-banner {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00f5d4;
+  box-shadow: 0 0 25px rgba(0, 245, 212, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .artist-banner {
+    width: 200px;
+    height: 200px;
+  }
+        }
