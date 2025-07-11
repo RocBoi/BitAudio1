@@ -289,3 +289,44 @@ body {
     height: 140px;
   }
 }
+.mint-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(145deg, #00f5d4, #0f0f0f);
+  color: white;
+}
+
+.mint-card {
+  background: rgba(255, 255, 255, 0.05);
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  color: #eee;
+}
+
+.mint-cover {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(0,245,212,0.3);
+}
+
+button {
+  background-color: #00f5d4;
+  color: #111;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: #444;
+  color: #888;
+}
